@@ -33,9 +33,11 @@ def newton():
     for i in range(ap):
         j = (j + (t / ap)) / 2
     print("The square root is approximately", j)
-newton()
+
 def sequence():
-     pass
+    pass
+
+
 
 def pi():
     pass
