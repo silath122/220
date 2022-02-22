@@ -162,3 +162,4 @@ def target():
     message.draw(win)
     win.getMouse()
     win.close()
+    # so I accidentally turned this into lab6 and wrote the whole code for color_shape myself :(
