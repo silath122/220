@@ -2,7 +2,8 @@
 Name: <Siah Thomas>
 <hw4>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: <This program draws squares, finds the radius of a circle, the perimeter of a rectangle
+, and the area of a rectangle>
 
 Certification of Authenticity:
 <I certify that this assignment is entirely my own work.>

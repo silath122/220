@@ -35,7 +35,6 @@ def names():
     for full_name in names_list:
         first_name, last_name = full_name.split()
         print(first_name[0]+last_name[0], end="\t")
-
 def thirds():
     num_sentence = eval(input("Enter the number of sentences: "))
     for statement in range(1, num_sentence + 1):
@@ -63,7 +62,7 @@ def pig_latin():
         # move letter to the end of the word and join ay to it
         letters = each_word.split()
         for each_letter in letters:
-            movement = each_letter[], each_letter[:1]
+            movement = each_letter[:], each_letter[:1]
             print(movement)
 # i give up :(
 pig_latin()

@@ -17,3 +17,5 @@ def traffic_tracker():
     avg_roads = total / roads
     print("Average number of vehicles per road: ", round(avg_roads, 1))
 
+
+traffic_tracker()
