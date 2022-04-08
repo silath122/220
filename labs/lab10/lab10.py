@@ -1,50 +1,37 @@
-import random
-from graphics import *
 from door import Door
 from button import Button
+from graphics import *
+
 
 
 def main():
     # main window
-    Window = GraphWin('Three Door Game I', 400, 700)
-    win = Window.setCoords(0.0, 0.0, 10.0, 10.0)
+    window = GraphWin('Three Door Game I', 400, 700)
+    wind = window.setCoords(0.0, 0.0, 10.0, 10.0)
 
-    # select secret door and draw other doors
-    door_1 = Door(Rectangle(Point(1.0, 0.0), Point(3.0, 7.0)),
-                  Text(Point(2.0, 3.5), 'Closed'))
-    door_1.draw(win)
+    # draw door
+    door_1 = Door(Rectangle(Point(4.0, 0.0), Point(6.0, 7.0)), Text(Point(5.0, 3.5), 'Closed'))
     door_1.color_door('Red')
 
-    door_2 = Door(Rectangle(Point(4.0, 0.0), Point(6.0, 7.0)),
-                  Text(Point(5.0, 3.5), 'Closed'))
-    door_2.draw(win)
-    door_2.color_door('Red')
+    exit_button = Button(Rectangle(Point(4.0, 7.5), Point(6.0, 9.5)), Text(Point(5.0, 8.5), 'Exit'))
 
-    door_3 = Door(Rectangle(Point(7.0, 0.0), Point(9.0, 7.0)),
-                  Text(Point(8.0, 3.5), 'Closed'))
-    door_3.draw(win)
-    door_3.color_door('Red')
+    pt = wind.getMouse()
+    while not exit_button.is_clicked(pt):
+        if door_1.is_clicked(pt):
+            door_1.open('Green', Text(Point(5.0, 3.5), 'Open'))
+            pt = wind.getMouse()
+            door_1.is_clicked(pt)
 
-    rand_door_list = [door_1, door_2, door_3]
-    secret = random.choice(rand_door_list)
-
-    if secret:
-
+            door_1.close('Red', Text(Point(5.0, 3.5), 'Closed'))
+            pt = wind.getMouse()
+        wind.getMouse()
+    wind.close()
 
 
-# my plan
-# if win:
-    # color clicked to make door green
-    # show message -- open
-    # keep track of wins?
 
-# if loss:
-    # color clicked make red
-    # color winning door green
-    # display appropriate message
-    # keep track of loss?
+main()
 
-# if exit:
-    # win.close()C
+
+
 
 
