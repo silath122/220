@@ -29,7 +29,7 @@ def is_equal(p1, p2): # use a conjunction truth table to see options - and, or, 
         return False
 
 def is_game_over(player_one_points, player_two_points): # win at 15
-    # or you could do absolute value and delete the second
+    # or you could doa absolute value and delete the second
     is_over_fifteen = player_one_points >= 15 or player_two_points >= 15
     won_by_two = abs(player_one_points - player_two_points) >= 2
     skunked = player_one_points >= 7 and player_two_points <= 0 or player_two_points >= 7 and player_one_points <= 0

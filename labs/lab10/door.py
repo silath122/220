@@ -46,8 +46,7 @@ class Door:
         self.shape.setFill(color)
 
     def is_secret(self):
-        if True:
-            return self.secret
+        return self.secret
 
     def set_secret(self, secret):
         self.secret = secret

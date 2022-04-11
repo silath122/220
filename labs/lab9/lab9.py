@@ -36,9 +36,10 @@ def print_board(board):
     print(row_3)
     print(reset)
 
-
+# True or False think of it like the name of the function is the question and True or False is yes or no if you keep
 def is_legal(board, position):
-    if board[position] == 'x' or 'o' and 0 <= position >= 8:
+    position = position - 1
+    if position < 0 or position > 8 or board[position] == 'x' or board[position] == 'o':
         return False
     else:
         return True
@@ -50,10 +51,10 @@ def fill_spot(board, position, character):
 
 def winning_game(board):
     for i in range(0, 8, 3):
-        if board[i] == board[i+1] == board[i+2]:
+        if board[i] == board[i+1] == board[i+2]: # rows go up by 1
             return True
     for i in range(0, 3, 1):
-        if board[i] == board[i+1] == board[i+2]:
+        if board[i] == board[i+3] == board[i+6]: # columns go up by 3
             return True
     if board[0] == board[4] == board[8]:
         return True
@@ -64,9 +65,9 @@ def winning_game(board):
 def game_over(board):
     tie = True
     for i in range(9):
-        if board[i] != 'x' or board[i] != 'o':
+        if board[i] != 'x' and board[i] != 'o':
             tie = False
-        return winning_game(board) or tie
+    return winning_game(board) or tie
 
 
 def get_winner(board):
@@ -87,21 +88,36 @@ def get_winner(board):
 
 
 def play(board):
-    while game_over(board) != True:
-        character = 'x'
-        for i in range(9):
-            print_board(board)
-            print("{}'s, choose a position: ".format(character))
-            position = eval(input(""))
-            while is_legal(board, position) != True:
+
+    character = 'x'
+    playing = True
+    while playing:
+        while game_over(board) != True:
+            for i in range(9):
+                print_board(board)
                 print("{}'s, choose a position: ".format(character))
-                position = eval(input(""))
-            fill_spot(board, position, character)
-            if character == 'x':
-                character = 'o'
-            else:
-                character = 'x'
-        print_board(board)
+                position = int(input(""))
+                while is_legal(board, position) != True:
+                    print("{}'s, choose a position: ".format(character))
+                    position = int(input(""))
+                fill_spot(board, position, character)
+
+                if (winning_game(board)):
+                    print_board(board)
+                    print("Player", get_winner(board), "won!")
+                elif (game_over(board)):
+                    print_board(board)
+                    print("Tie!")
+
+                if character == 'x':
+                    character = 'o'
+                else:
+                    character = 'x'
+        cont = input("Would you like to continue playing: ")
+        if cont[0] != 'y':
+            playing = False
+        board = build_board()
+
 
 
 
