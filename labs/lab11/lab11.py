@@ -83,3 +83,5 @@ def main():
     pt = win.getMouse()
     if quit_button.is_clicked(pt):
         win.close()
+
+main()

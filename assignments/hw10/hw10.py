@@ -41,10 +41,26 @@ def syracuse(n):
             syracuse_list.append(int(n))
     print(syracuse_list)
 
-def goldbach(n):
+def is_prime(n):
+    n = int(n)
+    primes_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+    if primes_list.index(n):
+        return True
+    else:
+        return False
+
+def gen_primes(n):
     n = int(n)
     primes = []
-    count = 3
+    for i in range(3, n):
+        if is_prime(i):
+            primes.append(i)
+    return primes
+
+def goldbach(n):
+    n = int(n)
+    two_primes = []
+    j = 0
 
 def Face_maker():
     win = graphics.GraphWin("Face")
