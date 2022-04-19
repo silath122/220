@@ -48,8 +48,9 @@ def color():
     col_split = []
     for color in colors:
         col_split.append(list(color.split(' ')))
+        print(col_split[])
     print(col_split)
-    print(col_split[])
+
 
 if __name__ == '__main__':
     color()
