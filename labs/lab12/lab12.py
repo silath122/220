@@ -1,5 +1,6 @@
 from random import randint
 
+
 def find_and_remove(list, value):
     i = 0
     while i < len(list):
@@ -7,22 +8,7 @@ def find_and_remove(list, value):
             list.pop(i)
             list.insert(i, 'siah')
         i = i + 1
-def read_data(filename):
-    infile = open(filename, 'r')
-    txt = infile.read()
-    txt = txt.replace("\n", " ")
-    txt = txt.split(" ")
-    i = 0
-    while i < len(txt):
-        txt[i] = eval(txt[i])
-        i += 1
-    return txt
 
-def is_in_linear(search_val, values):
-    i = 0
-    while i < len(search_val) and search_val != values:
-        i += 1
-    return i < len(search_val)
 
 def good_input():
     user_num = eval(input("The range is between 1 and 10, Input within range: "))

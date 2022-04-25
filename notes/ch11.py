@@ -43,12 +43,13 @@ def main():
     print('\nThe mean is', xbar)
     print("The standard deviation is", std)
     print("The median is", med)
+
 def color():
     colors = ['sky', 'blue', 'rose red', 'sunny yellow']
     col_split = []
     for color in colors:
         col_split.append(list(color.split(' ')))
-        print(col_split[])
+        print(col_split[:])
     print(col_split)
 
 
